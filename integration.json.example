@@ -1,0 +1,425 @@
+{
+	"id": {
+		"N": "0"
+	},
+	"name": {
+		"S": "<Integration client name>"
+	},
+	"engageExternalApi": {
+		"S": "http://localhost:3000"
+	},
+	"engageApiKey": {
+		"S": "<API KEY>"
+	},
+	"legalEntityId": {
+		"N": "1234"
+	},
+	"errorEmail": {
+		"M": {
+			"name": {
+				"S": "<dougie@twinpeaks.com>"
+			},
+			"address": {
+				"S": "Dougie Jones"
+			}
+		}
+	},
+	"defaultTimesheetPeriodStart": {
+		"S": "2019-01-07T00:00:00.000Z"
+	},
+	"placementsImporter": {
+		"M": {
+			"s3Bucket": {
+				"S": "<SFTP BUCKET>"
+			},
+			"folderSource": {
+				"S": "<business-name>/process"
+			},
+			"folderGood": {
+				"S": "<business-name>/accepted"
+			},
+			"folderBad": {
+				"S": "<business-name>/rejected"
+			},
+			"cronSchedule": {
+				"S": "*/15 * * * * *"
+			},
+			"workerPrefix": {
+				"S": "BH-"
+			},
+			"candidateFields": {
+				"SS": [
+					"id",
+					"firstName",
+					"lastName",
+					"email",
+					"status",
+					"mobile",
+					"address"
+				]
+			},
+			"fieldMapping": {
+				"M": {
+					"placementId": {
+						"S": "PlacementFrontendRef"
+					},
+					"rowType": {
+						"S": "RowType"
+					},
+					"rateName": {
+						"S": "RateName"
+					},
+					"companyNumber": {
+						"S": "ClientCompanyNumber"
+					},
+					"legalName": {
+						"S": "ClientName"
+					},
+					"position": {
+						"S": "PlacementJobTitle"
+					},
+					"defaultRate": {
+						"S": "PlacementDefaultRateName"
+					},
+					"payType": {
+						"S": "WorkerType"
+					},
+					"accountReference": {
+						"S": "ClientFrontendRef"
+					}
+				}
+			},
+			"valueMapping": {
+				"M": {
+					"placementRow": {
+						"S": "P"
+					},
+					"rateRow": {
+						"S": "R"
+					}
+				}
+			},
+			"mappings": {
+				"M": {
+					"toEngageWorker": {
+						"M": {
+							"employeeId": {
+								"S": "WorkerFrontendRef"
+							},
+							"firstName": {
+								"S": "WorkerFirstname"
+							},
+							"lastName": {
+								"S": "WorkerLastname"
+							},
+							"email": {
+								"S": "WorkerEmail"
+							},
+							"mobile": {
+								"S": "WorkerMobile"
+							},
+							"address1": {
+								"S": "WorkerStreet1"
+							},
+							"address2": {
+								"S": "WorkerStreet2"
+							},
+							"address3": {
+								"S": "WorkerTown"
+							},
+							"addressPostCode": {
+								"S": "WorkerPostcode"
+							},
+							"documentsTags": {
+								"S": "DocumentsTags"
+							}
+						}
+					},
+					"toEngageConsultantContact": {
+						"M": {
+							"personDetail.firstName": {
+								"S": "Consultant1Firstname"
+							},
+							"personDetail.surname": {
+								"S": "Consultant1Lastname"
+							},
+							"personDetail.phoneNo": {
+								"S": "unknown"
+							},
+							"personDetail.mobileNo": {
+								"S": "unknown"
+							},
+							"personDetail.addressLine1": {
+								"S": "Consultant1Street1"
+							},
+							"personDetail.addressLine2": {
+								"S": "Consultant1Street2"
+							},
+							"personDetail.city": {
+								"S": "Consultant1Town"
+							},
+							"personDetail.postCode": {
+								"S": "Consultant1Postcode"
+							},
+							"personDetail.email": {
+								"S": "Consultant1Email"
+							},
+							"legalEntityId": {
+								"S": "unknown"
+							},
+							"description": {
+								"S": "Consultant1FrontendRef"
+							},
+							"commission": {
+								"S": "Consultant1Commission"
+							}
+						}
+					},
+					"toEngageConsultant2Contact": {
+						"M": {
+							"personDetail.firstName": {
+								"S": "Consultant2Firstname"
+							},
+							"personDetail.surname": {
+								"S": "Consultant2Lastname"
+							},
+							"personDetail.phoneNo": {
+								"S": "unknown"
+							},
+							"personDetail.mobileNo": {
+								"S": "unknown"
+							},
+							"personDetail.addressLine1": {
+								"S": "Consultant2Street1"
+							},
+							"personDetail.addressLine2": {
+								"S": "Consultant2Street2"
+							},
+							"personDetail.city": {
+								"S": "Consultant2Town"
+							},
+							"personDetail.postCode": {
+								"S": "Consultant2Postcode"
+							},
+							"personDetail.email": {
+								"S": "Consultant2Email"
+							},
+							"legalEntityId": {
+								"S": "unknown"
+							},
+							"description": {
+								"S": "Consultant2FrontendRef"
+							},
+							"commission": {
+								"S": "Consultant2Commission"
+							}
+						}
+					},
+					"toEngageConsultant3Contact": {
+						"M": {
+							"personDetail.firstName": {
+								"S": "Consultant3Firstname"
+							},
+							"personDetail.surname": {
+								"S": "Consultant3Lastname"
+							},
+							"personDetail.phoneNo": {
+								"S": "unknown"
+							},
+							"personDetail.mobileNo": {
+								"S": "unknown"
+							},
+							"personDetail.addressLine1": {
+								"S": "Consultant3Street1"
+							},
+							"personDetail.addressLine2": {
+								"S": "Consultant3Street2"
+							},
+							"personDetail.city": {
+								"S": "Consultant3Town"
+							},
+							"personDetail.postCode": {
+								"S": "Consultant3Postcode"
+							},
+							"personDetail.email": {
+								"S": "Consultant3Email"
+							},
+							"legalEntityId": {
+								"S": "unknown"
+							},
+							"description": {
+								"S": "Consultant3FrontendRef"
+							},
+							"commission": {
+								"S": "Consultant3Commission"
+							}
+						}
+					},
+					"toEngageHiringContact": {
+						"M": {
+							"personDetail.firstName": {
+								"S": "ManagerFirstname"
+							},
+							"personDetail.surname": {
+								"S": "ManagerLastname"
+							},
+							"personDetail.phoneNo": {
+								"S": "unknown"
+							},
+							"personDetail.mobileNo": {
+								"S": "unknown"
+							},
+							"personDetail.addressLine1": {
+								"S": "ManagerStreet1"
+							},
+							"personDetail.addressLine2": {
+								"S": "ManagerStreet2"
+							},
+							"personDetail.city": {
+								"S": "ManagerTown"
+							},
+							"personDetail.postCode": {
+								"S": "ManagerPostcode"
+							},
+							"personDetail.email": {
+								"S": "ManagerEmail"
+							},
+							"legalEntityId": {
+								"S": "unknown"
+							},
+							"description": {
+								"S": "ManagerFrontendRef"
+							}
+						}
+					},
+					"toEngagePlacement": {
+						"M": {
+							"notes": {
+								"S": "unknown"
+							},
+							"qualifications": {
+								"S": "unknown"
+							},
+							"brief": {
+								"S": "unknown"
+							},
+							"startDate": {
+								"S": "PlacementStartDate"
+							},
+							"finishDate": {
+								"S": "PlacementEndDate"
+							},
+							"purchaseOrderRef": {
+								"S": "PlacementPurchaseOrder"
+							},
+							"externalId": {
+								"S": "PlacementFrontendRef"
+							},
+							"timesheetWorkflow": {
+								"S": "TimesheetWorkflow"
+							},
+							"timesheetPeriodStart": {
+								"S": "TimesheetPeriod"
+							}
+						}
+					},
+					"toEngageRate": {
+						"M": {
+							"name": {
+								"S": "RateName"
+							},
+							"description": {
+								"S": "unknown"
+							},
+							"startDate": {
+								"S": "unknown"
+							},
+							"finishDate": {
+								"S": "unknown"
+							},
+							"rateType": {
+								"S": "RatePeriod"
+							},
+							"payType": {
+								"S": "unknown"
+							},
+							"payRate": {
+								"S": "RatePay"
+							},
+							"holidayPayPercentage": {
+								"S": "unknown"
+							},
+							"erniPercentage": {
+								"S": "unknown"
+							},
+							"markupPercentage": {
+								"S": "unknown"
+							},
+							"subTotal": {
+								"S": "unknown"
+							},
+							"chargeTotal": {
+								"S": "RateCharge"
+							}
+						}
+					},
+					"toEngageSite": {
+						"M": {
+							"externalId": {
+								"S": "ClientFrontendRef"
+							},
+							"name": {
+								"S": "ClientName"
+							},
+							"address": {
+								"S": "ClientStreet1"
+							},
+							"postCode": {
+								"S": "ClientPostcode"
+							}
+						}
+					},
+					"toEngageBusiness": {
+						"M": {
+							"legalName": {
+								"S": "ClientName"
+							},
+							"companyNumber": {
+								"S": "ClientCompanyNumber"
+							}
+						}
+					},
+					"toEngagePosition": {
+						"M": {
+							"name": {
+								"S": "PlacementJobTitle"
+							},
+							"defaultJobDescription": {
+								"S" : "unknown"
+							},
+							"defaultQualifications": {
+								"S": "unknown"
+							},
+							"approvalMode": {
+								"S": "unknown"
+							}
+						}
+					},
+					"toEngagementId": {
+						"M": {
+							"PAYE": {
+								"N": "1"
+							},
+							"LTD": {
+								"N": "3"
+							},
+							"UMBRELLA": {
+								"N": "2"
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

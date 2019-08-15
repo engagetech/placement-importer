@@ -1,0 +1,10 @@
+.DS_Store
+.vscode
+node_modules
+/config.js
+.idea
+*.zip
+/logfile.txt
+*.iml
+/integration.json
+/tmp
